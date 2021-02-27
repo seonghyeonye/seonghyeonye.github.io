@@ -176,6 +176,29 @@ a, table.table a {
   color: var(--global-text-color);
 }
 
+// Work Experience
+
+.working_experience table td {
+  font-size: 1rem;
+  color: var(--global-text-color);
+}
+
+.working_experience table th {
+  color: var(--global-text-color);
+}
+
+
+// Teaching Experience
+
+.teaching_experience table td {
+  font-size: 1rem;
+  color: var(--global-text-color);
+}
+
+.teaching_experience table th {
+  color: var(--global-text-color);
+}
+
 // Social (bottom)
 
 .social {

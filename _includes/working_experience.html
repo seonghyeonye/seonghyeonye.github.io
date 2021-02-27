@@ -1,8 +1,28 @@
-<div class="work">
-    <h2>Working Experience</h2>
-
-    <a href= "https://elice.io/"> ELICE </a> (Dec 2019 ~ Feb 2020) : Frontend Engineer
-
-    U&I Lab (July 2020 ~ Present) : Undergraduate Research Intern
-
-  </div>
+<div class="working_experience">
+  <h4><strong>Work Experience</strong></h4>
+  {% if site.working_experience  %}
+    <div class="table-responsive">
+      <table class="table table-sm table-borderless">
+      {% assign working_experience = site.working_experience %}
+      {% for item in working_experience  %}
+        <tr>
+          <th scope="row">
+            {{ item.date | date: "%b %Y -"}}
+            {{ item.date2 | date: "%b %Y"}}
+          </th>
+          <td>
+            {% if item.inline %}
+              {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+            {% else %}
+              <a class="work-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
+  {% else %} 
+     <p>No news so far...</p>
+  {% endif %}
+  
+</div>
