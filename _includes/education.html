@@ -1,0 +1,30 @@
+<div class="education">
+    <h2>Education</h2>
+    {% if site.education  %}
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless">
+        {% assign education = site.education %}
+        {% for item in education  %}
+          <tr>
+            <th scope="row">{{ item.date | date: "%b %Y - %b %Y" }}</th>
+            <td>
+              {% if item.inline %}
+                {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+              {% else %}
+                <a class="education-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+        </table>
+      </div>
+    {% else %} 
+       <p>No news so far...</p>
+    {% endif %}
+
+    Ansan Dongsan High School (March 2014 ~ Feb 2017)
+
+    KAIST B.S School of Computing (Feb 2017 ~ August 2021 Expected)
+    
+  </div>
+  
