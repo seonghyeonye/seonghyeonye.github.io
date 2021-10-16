@@ -2738,7 +2738,7 @@ pre { margin-top: 0; margin-bottom: 0; font-family: "SFMono-Regular", Consolas, 
 .markdown-body span.align-right span img { margin: 0; text-align: right; }
 .markdown-body span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
 .markdown-body span.float-left span { margin: 13px 0 0; }
-.markdown-body span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-body span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden;}
 .markdown-body span.float-right > span { display: block; margin: 13px auto 0; overflow: hidden; text-align: right; }
 
 .markdown-body code, .markdown-body tt { padding: 0.2em 0.4em; margin: 0; font-size: 85%; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px; }
