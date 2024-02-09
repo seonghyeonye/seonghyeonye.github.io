@@ -46,11 +46,7 @@ a:hover:after, table.table a:hover:after { width: 100%; }
 
 
 .label-primary {
-  background-color: #337ab7;
-}
-.label-primary[href]:hover,
-.label-primary[href]:focus {
-  background-color: #286090;
+  color: red;
 }
 
 .navbar { box-shadow: none; border-bottom: 1px solid #e8e8e8; opacity: 0.95; background-color: var(--global-bg-color); }
