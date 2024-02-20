@@ -45,10 +45,6 @@ a:hover:after, table.table a:hover:after { width: 100%; }
 .post-description a:hover { color: var(--global-theme-color); text-decoration: none; }
 
 
-.label-primary {
-  color: red;
-}
-
 .navbar { box-shadow: none; border-bottom: 1px solid #e8e8e8; opacity: 0.95; background-color: var(--global-bg-color); }
 
 .navbar.navbar-light a:hover { text-decoration: none; }
