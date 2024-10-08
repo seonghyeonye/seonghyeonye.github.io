@@ -5,153 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seonghyeon Ye - Personal Website</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+          margin: 0;
+          padding: 20px;
+      }
 
-        /* Container for centering the content and limiting width */
-        .container {
-            width: 50%;  /* Limit the width to 50% on larger screens */
-            margin: 0 auto;  /* Center the container */
-            background-color: #fff;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+      /* Container for centering the content and limiting width */
+      .container {
+          width: 50%;  /* Limit the width to 50% on larger screens */
+          margin: 0 auto;  /* Center the container */
+          background-color: #fff;
+          padding: 50px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+      .header-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      }
 
-        .post-title {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+      .post-title {
+          font-size: 2.5em;
+          margin-bottom: 10px;
+      }
 
-        .font-weight-bold {
-            font-weight: bold;
-        }
+      .font-weight-bold {
+          font-weight: bold;
+      }
 
-        .desc {
-            font-size: 1.2em;
-            color: #333;
-        }
+      .desc {
+          font-size: 1.2em;
+          color: #333;
+      }
 
-        .desc i {
-            color: #555;
-        }
+      .desc i {
+          color: #555;
+      }
 
-        .post-header a {
-            color: #1a73e8;
-            text-decoration: none;
-            margin: 0 5px;
-        }
+      .post-header a {
+          color: #1a73e8;
+          text-decoration: none;
+          margin: 0 1px;
+      }
 
-        .post-header a:hover {
-            text-decoration: underline;
-        }
+      .post-header a:hover {
+          text-decoration: underline;
+      }
 
-        .profile-image {
-            flex-shrink: 0;
-            margin-left: 40px;
-        }
+      .profile-image {
+          flex-shrink: 0;
+          margin-left: 40px;
+      }
 
-        .profile-image img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+      .profile-image img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
 
-        hr {
-            border: none;
-            border-top: 1px solid #ddd;
-            margin: 20px 0;
-        }
+      hr {
+          border: none;
+          border-top: 1px solid #ddd;
+          margin: 20px 0;
+      }
 
-        .clearfix {
-            margin-top: 20px;
-        }
+      .clearfix {
+          margin-top: 20px;
+      }
 
-        .clearfix p {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
+      .clearfix p {
+          font-size: 1.1em;
+          line-height: 1.6;
+      }
 
-        .clearfix a {
-            color: #1a73e8;
-            text-decoration: none;
-        }
+      .clearfix a {
+          color: #1a73e8;
+          text-decoration: none;
+      }
 
-        .clearfix a:hover {
-            text-decoration: underline;
-        }
+      .clearfix a:hover {
+          text-decoration: underline;
+      }
 
-        /* Latest News Section */
-        .publication-section {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
+      /* Latest News Section */
+      .publication-section {
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          margin-top: 20px;
+      }
 
-        .publication-section h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
+      .publication-section h2 {
+          font-size: 2em;
+          margin-bottom: 10px;
+      }
 
-        .news-list {
-            list-style-type: none;
-            padding: 0;
-        }
+      .news-list {
+          list-style-type: none;
+          padding: 0;
+      }
 
-        .news-list li {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
+      .news-list li {
+          font-size: 1.1em;
+          line-height: 1.6;
+          margin-bottom: 10px;
+      }
 
-        .spotlight {
-            background-color: #ffd700; /* gold */
-            padding: 2px 5px;
-            border-radius: 5px;
-            font-weight: bold;
-            color: #333;
-        }
+      /* Make publication links light blue */
+      .publication-section a {
+          color: #1a73e8;  /* Light blue color for links */
+          text-decoration: none;
+      }
 
-        .education-section, .work-experience-section {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
+      .publication-section a:hover {
+          text-decoration: underline;
+      }
 
-        /* Media queries for responsiveness */
-        @media (max-width: 768px) {
-            .container {
-                width: 100%; /* Take full width on smaller screens */
-                padding: 20px;
-            }
+      .spotlight {
+          background-color: #ffd700; /* gold */
+          padding: 2px 5px;
+          border-radius: 5px;
+          font-weight: bold;
+          color: #333;
+      }
 
-            .header-container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
+      /* Work Experience and Education styles similar to Publication */
+      .education-section, .work-experience-section {
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          margin-top: 20px;
+      }
 
-            .profile-image {
-                margin-left: 0; /* Remove left margin for centered alignment */
-                margin-top: 20px;
-            }
-        }
-    </style>
+      .education-section h2, .work-experience-section h2 {
+          font-size: 2em;
+          margin-bottom: 10px;
+      }
+
+      /* Apply the same font size and line spacing as publications */
+      .education-list li, .work-list li {
+          font-size: 1.1em;
+          line-height: 1.6;
+          margin-bottom: 10px;
+      }
+
+      /* Media queries for responsiveness */
+      @media (max-width: 768px) {
+          .container {
+              width: 100%; /* Take full width on smaller screens */
+              padding: 20px;
+          }
+
+          .header-container {
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+          }
+
+          .profile-image {
+              margin-left: 0; /* Remove left margin for centered alignment */
+              margin-top: 20px;
+          }
+      }
+  </style>
 </head>
 
 <body>
@@ -186,32 +209,32 @@
         <h3>2024</h3>
         <ul class="news-list">
             <li>
-                <strong>How Do Large Language Models Acquire Factual Knowledge During Pretraining?</strong><br>
-                Hoyeon Chang, Jinho Park, <ins><b>Seonghyeon Ye</b></ins>, Sohee Yang, Youngkyung Seo, Du-Seong Chang, Minjoon Seo<br>
+                How Do Large Language Models Acquire Factual Knowledge During Pretraining?<br>
+                Hoyeon Chang, Jinho Park, <ins>Seonghyeon Ye</ins>, Sohee Yang, Youngkyung Seo, Du-Seong Chang, Minjoon Seo<br>
                 <i>NeurIPS 2024</i> 
                 <br><a href="https://arxiv.org/abs/2406.11813">[paper]</a> <a href="https://github.com/kaistAI/factual-knowledge-acquisition">[code]</a></p> 
             </li>
         </ul>
         <ul class="news-list">
             <li>
-                <strong>Instruction Matters, a Simple yet Effective Task Selection Approach in Instruction Tuning for Specific Tasks</strong><br>
-                Changho Lee, Janghoon Han, <ins><b>Seonghyeon Ye</b></ins>, Stanley Jungkyu Choi, Honglak Lee, Kyunghoon Bae<br>
+                Instruction Matters, a Simple yet Effective Task Selection Approach in Instruction Tuning for Specific Tasks<br>
+                Changho Lee, Janghoon Han, <ins>Seonghyeon Ye</ins>, Stanley Jungkyu Choi, Honglak Lee, Kyunghoon Bae<br>
                 <i>EMNLP 2024</i> 
                 <br><a href="https://arxiv.org/abs/2406.11813">[paper]</a> <a href="https://github.com/CHLee0801/INSTA">[code]</a></p> 
             </li>
         </ul>
         <ul class="news-list">
             <li>
-                <strong>Self-Explore to Avoid the Pit: Improving the Reasoning Capabilities of Language Models with Fine-grained Rewards</strong><br>
-                Hyeonbin Hwang, Doyoung Kim, Seungone Kim, <ins><b>Seonghyeon Ye</b></ins>, Minjoon Seo<br>
+                Self-Explore to Avoid the Pit: Improving the Reasoning Capabilities of Language Models with Fine-grained Rewards<br>
+                Hyeonbin Hwang, Doyoung Kim, Seungone Kim, <ins>Seonghyeon Ye</ins>, Minjoon Seo<br>
                 <i>EMNLP 2024 Findings</i> 
                 <br><a href="https://arxiv.org/abs/2404.10346">[paper]</a> <a href="https://github.com/hbin0701/Self-Explore">[code]</a></p> 
             </li>
         </ul>
         <ul class="news-list">
             <li>
-                <strong>FLASK: Fine-grained Language Model Evaluation based on Alignment Skill Sets</strong><br>
-                <ins><b>Seonghyeon Ye<sup>*</sup></b></ins>, Doyoung Kim<sup>*</sup>, Sungdong Kim, Hyeonbin Hwang, Seungone Kim, Yongrae Jo, James Thorne, Juho Kim, Minjoon Seo<br>
+                FLASK: Fine-grained Language Model Evaluation based on Alignment Skill Sets<br>
+                <ins>Seonghyeon Ye<sup>*</sup></b></ins>, Doyoung Kim<sup>*</sup>, Sungdong Kim, Hyeonbin Hwang, Seungone Kim, Yongrae Jo, James Thorne, Juho Kim, Minjoon Seo<br>
                 <i>ICLR 2024</i> 
                 <span class="spotlight">Spotlight</span>
                 <br><a href="https://arxiv.org/abs/2307.10928">[paper]</a> <a href="https://github.com/kaistAI/FLASK">[code]</a></p> 
@@ -220,24 +243,24 @@
         </ul>
         <ul class="news-list">
             <li>
-                <strong>Improving Probability-based Prompt Selection Through Unified Evaluation and Analysis</strong><br>
-                Sohee Yang, Jonghyeon Kim, Joel Jang, <ins><b>Seonghyeon Ye</b></ins>, Hyunji Lee, Minjoon Seo<br>
+                Improving Probability-based Prompt Selection Through Unified Evaluation and Analysis<br>
+                Sohee Yang, Jonghyeon Kim, Joel Jang, <ins>Seonghyeon Ye</ins>, Hyunji Lee, Minjoon Seo<br>
                 <i>TACL 2024</i>
                 <br><a href="https://arxiv.org/abs/2305.14877">[paper]</a> <a href="https://github.com/soheeyang/unified-prompt-selection">[code]</a></p> 
             </li>
         </ul>
         <ul class="news-list">
             <li>
-                <strong>Investigating the Effectiveness of Task-Agnostic Prefix Prompt for Instruction Following</strong><br>
-                <ins><b>Seonghyeon Ye</b></ins>, Hyeonbin Hwang, Sohee Yang, Hyeongu Yun, Yireun Kim, Minjoon Seo<br>
+                Investigating the Effectiveness of Task-Agnostic Prefix Prompt for Instruction Following<br>
+                <ins>Seonghyeon Ye</ins>, Hyeonbin Hwang, Sohee Yang, Hyeongu Yun, Yireun Kim, Minjoon Seo<br>
                 <i>AAAI 2024</i>
                 <br><a href="https://arxiv.org/abs/2302.14691">[paper]</a> <a href="https://github.com/seonghyeonye/icil">[code]</a></p> 
             </li>
         </ul>
         <ul class="news-list">
             <li>
-                <strong>Carpe Diem: On the Evaluation of World Knowledge in Lifelong Language Models</strong><br>
-                Yujin Kim, Jaehong Yoon, <ins><b>Seonghyeon Ye</b></ins>, Sung Ju Hwang, Se-young Yun<br>
+                Carpe Diem: On the Evaluation of World Knowledge in Lifelong Language Models<br>
+                Yujin Kim, Jaehong Yoon, <ins>Seonghyeon Ye</ins>, Sung Ju Hwang, Se-young Yun<br>
                 <i>NAACL 2024</i>
                 <br><a href="https://arxiv.org/abs/2311.08106">[paper]</a>
             </li>
@@ -248,40 +271,40 @@
         
         <ul class="news-list">
             <li>
-                <strong>The CoT Collection: Improving Zero-shot and Few-shot Learning of Language Models via Chain-of-Thought Fine-tuning</strong><br>
-                Seungone Kim, Se June Joo, Doyoung Kim, Joel Jang, <ins><b>Seonghyeon Ye</b></ins>, Jamin Shin, Minjoon Seo<br>
+                The CoT Collection: Improving Zero-shot and Few-shot Learning of Language Models via Chain-of-Thought Fine-tuning<br>
+                Seungone Kim, Se June Joo, Doyoung Kim, Joel Jang, <ins>Seonghyeon Ye</ins>, Jamin Shin, Minjoon Seo<br>
                 <i>EMNLP 2023</i>
                 <br><a href="https://arxiv.org/abs/2305.14045">[paper]</a> <a href="https://github.com/kaist-lklab/CoT-Collection">[code]</a></p> 
             </li>
         </ul>
         <ul class="news-list">
             <li>
-                <strong>Efficiently Enhancing Zero-Shot Performance of Instruction Following Model via Retrieval of Soft Prompt</strong><br>
-                <ins><b>Seonghyeon Ye</b></ins>, Joel Jang, Doyoung Kim, Yongrae Jo, Minjoon Seo<br>
+                Efficiently Enhancing Zero-Shot Performance of Instruction Following Model via Retrieval of Soft Prompt<br>
+                <ins>Seonghyeon Ye</ins>, Joel Jang, Doyoung Kim, Yongrae Jo, Minjoon Seo<br>
                 <i>EMNLP 2023 Findings</i>
                 <br><a href="https://arxiv.org/abs/2210.03029">[paper]</a> <a href="https://github.com/seonghyeonye/RoSPr">[code]</a></p> 
             </li>
         </ul>
         <ul class="news-list">
             <li>
-                <strong>Exploring the Benefits of Training Expert Language Models over Instruction Tuning</strong><br>
-                Joel Jang, Seungone Kim, <ins><b>Seonghyeon Ye</b></ins>, Doyoung Kim, Lajanugen Logeswaran, Moontae Lee, Kyungjae Lee, Minjoon Seo<br>
+                Exploring the Benefits of Training Expert Language Models over Instruction Tuning<br>
+                Joel Jang, Seungone Kim, <ins>Seonghyeon Ye</ins>, Doyoung Kim, Lajanugen Logeswaran, Moontae Lee, Kyungjae Lee, Minjoon Seo<br>
                 <i>ICML 2023</i>
                 <br><a href="https://arxiv.org/abs/2302.03202">[paper]</a> <a href="https://github.com/joeljang/ELM">[code]</a></p> 
             </li>
         </ul>
         <ul class="news-list">
             <li>
-                <strong>Guess the Instruction! Flipped Learning Makes Language Models Stronger Zero-Shot Learners</strong><br>
-                <ins><b>Seonghyeon Ye</b></ins>, Doyoung Kim, Joel Jang, Joongbo Shin, Minjoon Seo<br>
+                Guess the Instruction! Flipped Learning Makes Language Models Stronger Zero-Shot Learners<br>
+                <ins>Seonghyeon Ye</ins>, Doyoung Kim, Joel Jang, Joongbo Shin, Minjoon Seo<br>
                 <i>ICLR 2023</i>
                 <br><a href="https://arxiv.org/abs/2210.02969">[paper]</a> <a href="https://github.com/seonghyeonye/Flipped-Learning">[code]</a></p> 
             </li>
         </ul>
         <ul class="news-list">
             <li>
-                <strong>SelFee: Iterative Self-Revising LLM Empowered by Self-Feedback Generation</strong><br>
-                <ins><b>Seonghyeon Ye<sup>*</sup></b></ins>, Yongrae Jo<sup>*</sup>, Doyoung Kim<sup>*</sup>, Sungdong Kim, Hyeonbin Hwang, Minjoon Seo<br>
+                SelFee: Iterative Self-Revising LLM Empowered by Self-Feedback Generation<br>
+                <ins>Seonghyeon Ye<sup>*</sup></b></ins>, Yongrae Jo<sup>*</sup>, Doyoung Kim<sup>*</sup>, Sungdong Kim, Hyeonbin Hwang, Minjoon Seo<br>
                 <i>Blog post</i>
                 <br><a href="https://kaistai.github.io/SelFee/">[blog]</a> <a href="https://github.com/kaistAI/SelFee">[code]</a></p> 
             </li>
@@ -290,24 +313,24 @@
         <h3>2022</h3>
         <ul class="news-list">
             <li>
-                <strong>Can Large Language Models Truly Understand Prompts? A Case Study with Negated Prompts</strong><br>
-                Joel Jang<sup>*</sup>, <ins><b>Seonghyeon Ye</b></ins><sup>*</sup>, Minjoon Seo<br>
+                Can Large Language Models Truly Understand Prompts? A Case Study with Negated Prompts<br>
+                Joel Jang<sup>*</sup>, <ins>Seonghyeon Ye</ins><sup>*</sup>, Minjoon Seo<br>
                 <i>Transfer Learning for NLP Workshop @ NeurIPS 2022</i>
                 <br><a href="https://arxiv.org/abs/2209.12711">[paper]</a> <a href="https://github.com/joeljang/negated-prompts-for-llms">[code]</a></p>
             </li>
         </ul>
         <ul class="news-list">
             <li>
-                <strong>TemporalWiki: A Lifelong Benchmark for Training and Evaluating Ever-Evolving Language Models</strong><br>
-                Joel Jang<sup>*</sup>, <ins><b>Seonghyeon Ye</b></ins><sup>*</sup>, Chango Lee, Sohee Yang, Joongbo Shin, Janghoon Han, Gyeonghun Kim, Minjoon Seo<br>
+                TemporalWiki: A Lifelong Benchmark for Training and Evaluating Ever-Evolving Language Models<br>
+                Joel Jang<sup>*</sup>, <ins>Seonghyeon Ye</ins><sup>*</sup>, Chango Lee, Sohee Yang, Joongbo Shin, Janghoon Han, Gyeonghun Kim, Minjoon Seo<br>
                 <i>EMNLP 2022</i>
                 <br><a href="https://arxiv.org/abs/2204.14211">[paper]</a> <a href="https://github.com/joeljang/temporalwiki">[code]</a></p>
             </li>
         </ul>
         <ul class="news-list">
             <li>
-                <strong>Towards Continual Knowledge Learning of Language Models</strong><br>
-                Joel Jang, <ins><b>Seonghyeon Ye</b></ins>, Sohee Yang, Joongbo Shin, Janghoon Han, Gyeonghun Kim, Stanley Jungkyu Choi, Minjoon Seo<br>
+                Towards Continual Knowledge Learning of Language Models<br>
+                Joel Jang, <ins>Seonghyeon Ye</ins>, Sohee Yang, Joongbo Shin, Janghoon Han, Gyeonghun Kim, Stanley Jungkyu Choi, Minjoon Seo<br>
                 <i>ICLR 2022</i>
                 <br><a href="https://arxiv.org/abs/2110.03215">[paper]</a> <a href="https://github.com/joeljang/continual-knowledge-learning">[code]</a></p>  
             </li>
@@ -316,16 +339,16 @@
         <h3>2021</h3>
         <ul class="news-list">
             <li>
-                <strong>Efficient Contrastive Learning via Novel Data Augmentation and Curriculum Learning</strong><br>
-                <ins><b>Seonghyeon Ye</b></ins>, Jiseon Kim, Alice Oh<br>
+                Efficient Contrastive Learning via Novel Data Augmentation and Curriculum Learning<br>
+                <ins>Seonghyeon Ye</ins>, Jiseon Kim, Alice Oh<br>
                 <i>EMNLP 2021 (short)</i>
                 <br><a href="https://arxiv.org/abs/2109.05941">[paper]</a> <a href="https://github.com/seonghyeonye/EfficientCL">[code]</a></p>
             </li>  
         </ul>
         <ul class="news-list">
             <li>
-                <strong>Dimensional Emotion Detection from Categorical Emotion</strong><br>
-                Sungjoon Park, Jiseon Kim, <ins><b>Seonghyeon Ye</b></ins>, Jaeyeol Jeon, Hee Young Park, Alice Oh<br>
+                Dimensional Emotion Detection from Categorical Emotion<br>
+                Sungjoon Park, Jiseon Kim, <ins>Seonghyeon Ye</ins>, Jaeyeol Jeon, Hee Young Park, Alice Oh<br>
                 <i>EMNLP 2021</i>
                 <br><a href="https://arxiv.org/abs/1911.02499">[paper]</a> <a href="https://github.com/SungjoonPark/EmotionDetection">[code]</a></p>
             </li>
@@ -338,12 +361,12 @@
 
         <ul class="education-list">
             <li>
-                <strong>KAIST (Korea Advanced Institute of Science and Technology)</strong><br>
+                <strong>KAIST AI</strong><br>
                 M.S. & Ph.D. in Artificial Intelligence, <i>2022 - Present</i><br>
                 Advisor: Minjoon Seo, Kimin Lee
             </li>
             <li>
-                <strong>KAIST (Korea Advanced Institute of Science and Technology)</strong><br>
+                <strong>KAIST CS</strong><br>
                 B.S. in Computer Science, <i>2017 - 2021</i><br>
                 Advisor: Alice Oh, Jong C. Park
             </li>
