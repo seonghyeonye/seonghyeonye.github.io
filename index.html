@@ -11,69 +11,87 @@
             margin: 0;
             padding: 20px;
         }
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+
+        /* Container for centering the content and limiting width */
+        .container {
+            width: 50%;  /* Limit the width to 50% on larger screens */
+            margin: 0 auto;  /* Center the container */
             background-color: #fff;
             padding: 50px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .post-header {
-            flex: 1;
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
+
         .post-title {
             font-size: 2.5em;
             margin-bottom: 10px;
         }
+
         .font-weight-bold {
             font-weight: bold;
         }
+
         .desc {
             font-size: 1.2em;
             color: #333;
         }
+
         .desc i {
             color: #555;
         }
+
         .post-header a {
             color: #1a73e8;
             text-decoration: none;
-            margin: 0 1px;
+            margin: 0 5px;
         }
+
         .post-header a:hover {
             text-decoration: underline;
         }
+
         .profile-image {
             flex-shrink: 0;
             margin-left: 40px;
         }
+
         .profile-image img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         hr {
             border: none;
             border-top: 1px solid #ddd;
             margin: 20px 0;
         }
+
         .clearfix {
             margin-top: 20px;
         }
+
         .clearfix p {
             font-size: 1.1em;
             line-height: 1.6;
         }
+
         .clearfix a {
             color: #1a73e8;
             text-decoration: none;
         }
+
         .clearfix a:hover {
             text-decoration: underline;
         }
+
         /* Latest News Section */
         .publication-section {
             background-color: #fff;
@@ -99,66 +117,67 @@
             margin-bottom: 10px;
         }
 
-        .news-list li strong {
+        .spotlight {
+            background-color: #ffd700; /* gold */
+            padding: 2px 5px;
+            border-radius: 5px;
+            font-weight: bold;
             color: #333;
         }
-        .spotlight {
-        background-color: #ffd700; /* gold */
-        padding: 2px 5px;
-        border-radius: 5px;
-        font-weight: bold;
-        color: #333;
-        } 
+
         .education-section, .work-experience-section {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
 
-        .education-section h2, .work-experience-section h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                width: 100%; /* Take full width on smaller screens */
+                padding: 20px;
+            }
 
-        .education-list, .work-list {
-            list-style-type: none;
-            padding: 0;
-        }
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
 
-        .education-list li, .work-list li {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 10px;
+            .profile-image {
+                margin-left: 0; /* Remove left margin for centered alignment */
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="header-container">
-        <header class="post-header">
-            <h1 class="post-title">
-                <span class="font-weight-bold">Seonghyeon Ye</span>
-            </h1>
-            <p class="desc"><i><b>KAIST Graduate school of AI</b></i></p>
-            <p>
-                <a href="mailto:seonghyeon.ye@kaist.ac.kr">[Mail]</a>
-                <a href="https://github.com/seonghyeonye" target="_blank">[GitHub]</a>
-                <a href="https://scholar.google.com/citations?user=JfGGjBoAAAAJ&hl=en&oi=ao" target="_blank">[Google Scholar]</a>
-                <a href="https://twitter.com/SeonghyeonYe" target="_blank">[X]</a>
-            </p>
+  <div class="container">
+      <div class="header-container">
+          <header class="post-header">
+              <h1 class="post-title">
+                  <span class="font-weight-bold">Seonghyeon Ye</span>
+              </h1>
+              <p class="desc"><i><b>KAIST Graduate school of AI</b></i></p>
+              <p>
+                  <a href="mailto:seonghyeon.ye@kaist.ac.kr">[Mail]</a>
+                  <a href="https://github.com/seonghyeonye" target="_blank">[GitHub]</a>
+                  <a href="https://scholar.google.com/citations?user=JfGGjBoAAAAJ&hl=en&oi=ao" target="_blank">[Google Scholar]</a>
+                  <a href="https://twitter.com/SeonghyeonYe" target="_blank">[X]</a>
+              </p>
+              <hr>
+              <div class="clearfix">
+                  <p>Hello, I am a second year Ph.D student in KAIST Graduate school of AI, advised by <a href="https://seominjoon.github.io/">Minjoon Seo</a> and <a href="https://sites.google.com/view/kiminlee">Kimin Lee</a>. I am currently interested in building robotic foundation models using internet-scale video data.</p>
+              </div>
+          </header>
 
-            <hr> <!-- Horizontal line to separate links from introduction -->
-
-            <div class="clearfix">
-                <p>Hello, I am a second year Ph.D student in KAIST Graduate school of AI, advised by <a href="https://seominjoon.github.io/">Minjoon Seo</a> and <a href=https://sites.google.com/view/kiminlee>Kimin Lee</a>. I am currently interested in building robotic foundation models using internet-scale video data.</p>
-            </div>
-        </header>
-
-        <div class="profile-image">
-            <img src="SeonghyeonYe.JPG" alt="Seonghyeon Ye's Photo">
-        </div>
-    </div>
+          <div class="profile-image">
+              <img src="SeonghyeonYe.JPG" alt="Seonghyeon Ye's Photo">
+          </div>
+      </div>
 
     <!-- Latest News Section -->
     <div class="publication-section">
@@ -348,6 +367,7 @@
             <!-- Add more work experiences if needed -->
         </ul>
     </div>
+  </div>
 
 </body>
 </html>
