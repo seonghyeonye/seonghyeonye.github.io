@@ -5,508 +5,764 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seonghyeon Ye</title>
     <link rel="icon" type="image/png" href="kaist.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-      body {
-          font-family: Arial, sans-serif;
-          background-color: #f4f4f4;
-          margin: 0;
-          padding: 20px;
-      }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-      /* Container for centering the content and limiting width */
-      .container {
-          width: 50%;  /* Limit the width to 50% on larger screens */
-          margin: 0 auto;  /* Center the container */
-          background-color: #fff;
-          padding: 50px;
-          border-radius: 10px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
+        :root {
+            --accent:      #2563eb;
+            --accent-light: #eff6ff;
+            --text:        #1e293b;
+            --text-muted:  #64748b;
+            --border:      #e2e8f0;
+            --bg:          #f1f5f9;
+            --card:        #ffffff;
+            --gold:        #b45309;
+            --gold-bg:     #fef3c7;
+            --red:         #dc2626;
+            --red-bg:      #fee2e2;
+        }
 
-      .header-container {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-      }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 15px;
+        }
 
-      .post-title {
-          font-size: 2.5em;
-          margin-bottom: 10px;
-      }
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
 
-      .font-weight-bold {
-          font-weight: bold;
-      }
+        /* ── HERO ─────────────────────────────── */
+        .hero {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 48px 52px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+            display: flex;
+            gap: 48px;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
 
-      .desc {
-          font-size: 1.2em;
-          color: #333;
-      }
+        .hero-info { flex: 1; min-width: 0; }
 
-      .desc i {
-          color: #555;
-      }
+        .hero-name {
+            font-size: 2.1rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
 
-      .post-header a {
-          color: #1a73e8;
-          text-decoration: none;
-          margin: 0 1px;
-      }
+        .hero-affiliation {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 22px;
+        }
 
-      .post-header a:hover {
-          text-decoration: underline;
-      }
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
 
-      .profile-image {
-          flex-shrink: 0;
-          margin-left: 40px;
-      }
+        .hero-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            background: #f8fafc;
+            transition: all 0.18s ease;
+        }
 
-      .profile-image img {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
+        .hero-link:hover {
+            color: var(--accent);
+            border-color: #93c5fd;
+            background: var(--accent-light);
+        }
 
-      hr {
-          border: none;
-          border-top: 1px solid #ddd;
-          margin: 20px 0;
-      }
+        .hero-bio {
+            font-size: 0.93rem;
+            line-height: 1.8;
+            color: #334155;
+        }
 
-      .clearfix {
-          margin-top: 20px;
-      }
+        .hero-bio a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-      .clearfix p {
-          font-size: 1.1em;
-          line-height: 1.6;
-      }
+        .hero-bio a:hover { text-decoration: underline; }
 
-      .clearfix a {
-          color: #1a73e8;
-          text-decoration: none;
-      }
+        .profile-image img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+            border: 3px solid #fff;
+            display: block;
+        }
 
-      .clearfix a:hover {
-          text-decoration: underline;
-      }
+        /* ── SECTIONS ─────────────────────────── */
+        .section {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 40px 52px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+        }
 
-      /* Latest News Section */
-      .publication-section {
-          background-color: #fff;
-          padding: 30px;
-          border-radius: 10px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          margin-top: 20px;
-      }
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            margin-bottom: 28px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-      .publication-section h2 {
-          font-size: 2em;
-          margin-bottom: 10px;
-      }
+        .section-title i {
+            color: var(--accent);
+            font-size: 0.95rem;
+        }
 
-      .news-list {
-          list-style-type: none;
-          padding: 0;
-      }
+        /* ── YEAR GROUPS ──────────────────────── */
+        .year-group { margin-bottom: 8px; }
 
-      .news-list li {
-          font-size: 1.1em;
-          line-height: 1.6;
-          margin-bottom: 10px;
-      }
+        .year-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-      /* Make publication links light blue */
-      .publication-section a {
-          color: #1a73e8;  /* Light blue color for links */
-          text-decoration: none;
-      }
+        .year-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
 
-      .publication-section a:hover {
-          text-decoration: underline;
-      }
+        /* ── PUBLICATION CARD ─────────────────── */
+        .pub-card {
+            padding: 16px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
 
-      .spotlight {
-          background-color: #ffd700; /* gold */
-          padding: 2px 5px;
-          border-radius: 5px;
-          font-weight: bold;
-          color: #333;
-      }
+        .pub-card:last-child { border-bottom: none; padding-bottom: 0; }
 
-      .best_paper {
-          background-color: #ff6347; /* tomato */
-          padding: 2px 5px;
-          border-radius: 5px;
-          font-weight: bold;
-          color: #333;
-      }
+        .pub-title {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
 
+        .pub-authors {
+            font-size: 0.81rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+            line-height: 1.65;
+        }
 
-      /* Work Experience and Education styles similar to Publication */
-      .education-section, .work-experience-section {
-          background-color: #fff;
-          padding: 30px;
-          border-radius: 10px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          margin-top: 20px;
-      }
+        .pub-authors ins {
+            text-decoration: none;
+            color: #1e40af;
+            font-weight: 600;
+        }
 
-      .education-section h2, .work-experience-section h2 {
-          font-size: 2em;
-          margin-bottom: 10px;
-      }
+        .pub-venue {
+            font-size: 0.81rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+        }
 
-      /* Apply the same font size and line spacing as publications */
-      .education-list li, .work-list li {
-          font-size: 1.1em;
-          line-height: 1.6;
-          margin-bottom: 10px;
-      }
+        .pub-venue-name { font-style: italic; }
 
-      /* Media queries for responsiveness */
-      @media (max-width: 768px) {
-          .container {
-              width: 100%; /* Take full width on smaller screens */
-              padding: 20px;
-          }
+        .pub-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
 
-          .header-container {
-              flex-direction: column;
-              align-items: center;
-              text-align: center;
-          }
+        .pub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--accent);
+            border: 1px solid #bfdbfe;
+            background: #eff6ff;
+            transition: all 0.18s ease;
+        }
 
-          .profile-image {
-              margin-left: 0; /* Remove left margin for centered alignment */
-              margin-top: 20px;
-          }
-      }
-  </style>
+        .pub-link:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        /* ── BADGES ───────────────────────────── */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            vertical-align: middle;
+        }
+
+        .badge-spotlight {
+            background: var(--gold-bg);
+            color: var(--gold);
+            border: 1px solid #fcd34d;
+        }
+
+        .badge-best {
+            background: var(--red-bg);
+            color: var(--red);
+            border: 1px solid #fca5a5;
+        }
+
+        /* ── TIMELINE ─────────────────────────── */
+        .timeline { display: flex; flex-direction: column; }
+
+        .timeline-item {
+            padding: 16px 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .timeline-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .timeline-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-top: 1px;
+        }
+
+        .timeline-content { flex: 1; min-width: 0; }
+
+        .timeline-org {
+            font-size: 0.93rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+
+        .timeline-detail {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        .timeline-detail a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .timeline-detail a:hover { text-decoration: underline; }
+
+        /* ── RESPONSIVE ───────────────────────── */
+        @media (max-width: 640px) {
+            .hero {
+                flex-direction: column-reverse;
+                align-items: center;
+                padding: 32px 28px;
+                text-align: center;
+            }
+            .hero-links { justify-content: center; }
+            .section { padding: 32px 28px; }
+            .hero-name { font-size: 1.75rem; }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container">
-      <div class="header-container">
-          <header class="post-header">
-              <h1 class="post-title">
-                  <span class="font-weight-bold">Seonghyeon Ye</span>
-              </h1>
-              <p class="desc"><i><b>KAIST Graduate school of AI</b></i></p>
-              <p>
-                  <a href="mailto:seonghyeon.ye@kaist.ac.kr">[Mail]</a>
-                  <a href="https://github.com/seonghyeonye" target="_blank">[GitHub]</a>
-                  <a href="https://scholar.google.com/citations?user=JfGGjBoAAAAJ&hl=en&oi=ao" target="_blank">[Google Scholar]</a>
-                  <a href="https://twitter.com/SeonghyeonYe" target="_blank">[X]</a>
-              </p>
-              <hr>
-              <div class="clearfix">
-                  <p>I am a final year Ph.D student in KAIST Graduate school of AI, advised by <a href="https://seominjoon.github.io/">Minjoon Seo</a> and <a href="https://sites.google.com/view/kiminlee">Kimin Lee</a>. I am also currently a research intern at <a href="https://research.nvidia.com/labs/gear/">NVIDIA GEAR</a> team, led by <a href="https://jimfan.me/">Jim Fan</a> and <a href="https://yukezhu.me/">Yuke Zhu</a>. I am interested in world action models for generalist robot policy.</p>
-              </div>
-          </header>
+<div class="container">
 
-          <div class="profile-image">
-              <img src="SeonghyeonYe.JPG" alt="Seonghyeon Ye's Photo">
-          </div>
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <div class="hero-info">
+      <h1 class="hero-name">Seonghyeon Ye</h1>
+      <p class="hero-affiliation">KAIST Graduate School of AI &nbsp;·&nbsp; Ph.D. Candidate</p>
+      <div class="hero-links">
+        <a class="hero-link" href="mailto:seonghyeon.ye@kaist.ac.kr">
+          <i class="fa fa-envelope"></i> Email
+        </a>
+        <a class="hero-link" href="https://github.com/seonghyeonye" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a class="hero-link" href="https://scholar.google.com/citations?user=JfGGjBoAAAAJ&hl=en&oi=ao" target="_blank">
+          <i class="fa fa-graduation-cap"></i> Google Scholar
+        </a>
+        <a class="hero-link" href="https://twitter.com/SeonghyeonYe" target="_blank">
+          <i class="fab fa-x-twitter"></i> X / Twitter
+        </a>
       </div>
-
-    <!-- Latest News Section -->
-    <div class="publication-section">
-        <h2>Publications</h2>
-        <hr>
-        <h3>2026</h3>
-        <ul class="news-list">
-            <li>
-                DreamZero: World Action Models are Zero-shot Policies<br>
-                <ins>Seonghyeon Ye†</ins>, Yunhao Ge*, Kaiyuan Zheng*, Shenyuan Gao*, Sihyun Yu*, George Kurian*, Suneel Indupuru*, You Liang Tan*, Chuning Zhu, Jiannan Xiang, Ayaan Malik, Kyungmin Lee, William Liang, Nadun Ranawaka, Jiasheng Gu, Yinzhen Xu, Guanzhi Wang, Fengyuan Hu, Avnish Narayan, Johan Bjorck, Jing Wang, Gwanghyun Kim, Dantong Niu, Ruijie Zheng, Yuqi Xie, Jimmy Wu, Qi Wang, Ryan Julian, Danfei Xu, Yilun Du, Yevgen Chebotar, Scott Reed, Jan Kautz, Yuke Zhu†, Linxi "Jim" Fan†, Joel Jang†
-                <br><a href="https://arxiv.org/abs/2602.15922">[paper]</a> <a href=https://github.com/dreamzero0/dreamzero>[code]</a><a href="https://dreamzero0.github.io/">[website]</a>
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos<br>
-                Shenyuan Gao†, William Liang†, Kaiyuan Zheng*, Ayaan Malik*, <ins>Seonghyeon Ye</ins>, Sihyun Yu, Wei-Cheng Tseng, Yuzhu Dong, Kaichun Mo, Chen-Hsuan Lin, Qianli Ma, Seungjun Nah, Loic Magne, Jiannan Xiang, Yuqi Xie, Ruijie Zheng, Dantong Niu, You Liang Tan, K.R. Zentner, George Kurian, Suneel Indupuru, Pooya Jannaty, Jinwei Gu, Jun Zhang, Jitendra Malik, Pieter Abbeel, Ming-Yu Liu, Yuke Zhu†, Joel Jang†, Linxi "Jim" Fan†
-                <br><a href="https://arxiv.org/abs/2602.06949">[paper]</a>
-                <a href="https://github.com/NVIDIA/DreamDojo">[code]</a> <a href="https://dreamdojo-world.github.io/">[website]</a>
-            </li>
-        </ul>
-        <hr>
-        <h3>2025</h3>
-        <ul class="news-list">
-            <li>
-                DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories<br>
-                Joel Jang*, <ins>Seonghyeon Ye*</ins>, Zongyu Lin*, Jiannan Xiang*, Johan Bjorck, Yu Fang, Fengyuan Hu, Spencer Huang, Kaushil Kundalia, Yen-Chen Lin, Loic Magne, Ajay Mandlekar, Avnish Narayan, You Liang Tan, Guanzhi Wang, Jing Wang, Qi Wang, Yinzhen Xu, Xiaohui Zeng, Kaiyuan Zheng, Ruijie Zheng, Ming-Yu Liu, Luke Zettlemoyer, Dieter Fox, Jan Kautz, Scott Reed*, Yuke Zhu*, Linxi "Jim" Fan*<br>
-                <i>CoRL 2025</i>
-                <br><a href="https://arxiv.org/abs/2505.12705">[paper]</a> <a href="https://research.nvidia.com/labs/gear/dreamgen/">[website]</a>
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Comsos-Predict2.5: World Simulation with Video Foundation Models for Physical AI<br>
-                NVIDIA<br>
-                <i>Tech Report</i>
-                <br><a href="https://arxiv.org/abs/2511.00062">[paper]</a> <a href="https://github.com/nvidia-cosmos/cosmos-predict2.5">[code]</a>
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                FLARE: Robot learning with implicit world modeling<br>
-                Ruijie Zheng*, Jing Wang*, Scott Reed*, Johan Bjorck, Yu Fang, Fengyuan Hu, Joel Jang, Kaushil Kundalia, Zongyu Lin, Loic Magne, Avnish Narayan, You Liang Tan, Guanzhi Wang, Qi Wang, Jiannan Xiang, Yinzhen Xu, <ins>Seonghyeon Ye</ins>, Jan Kautz, Furong Huang, Yuke Zhu, Linxi Fan<br>
-                <i>CoRL 2025</i>
-                <br><a href="https://arxiv.org/abs/2505.15659">[paper]</a> <a href="https://research.nvidia.com/labs/gear/flare">[website]</a>
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                GR00T N1: An Open Foundation Model for Generalist Humanoid Robots<br>
-                NVIDIA GEAR<br>
-                <i>Tech Report</i>
-                <br><a href="https://arxiv.org/abs/2503.14734">[paper]</a> <a href="https://github.com/NVIDIA/Isaac-GR00T">[code]</a> <a href="https://developer.nvidia.com/isaac/gr00t">[website]</a>
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Magma: A Foundation Model for Multimodal AI Agents<br>
-                Jianwei Yang, Reuben Tan, Qianhui Wu, Ruijie Zheng, Baolin Peng, Yongyuan Liang, Yu Gu, Mu Cai, <ins>Seonghyeon Ye</ins>, Joel Jang, Yuquan Deng, Lars Liden, Jianfeng Gao<br>
-                <i>CVPR 2025</i>
-                <br><a href="https://arxiv.org/abs/2502.13130">[paper]</a> <a href="https://github.com/microsoft/Magma">[code]</a> <a href="https://microsoft.github.io/Magma">[website]</a>
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Latent Action Pretraining from Videos<br>
-                <ins>Seonghyeon Ye<sup>*</sup></b></ins>, Joel Jang<sup>*</sup>, Byeongguk Jeon, Sejune Joo, Jianwei Yang, Baolin Peng, Ajay Mandlekar, Reuben Tan, Yu-Wei Chao, Bill Yuchen Lin, Lars Liden, Kimin Lee*, Jianfeng Gao*, Luke Zettlemoyer*, Dieter Fox*, Minjoon Seo*<br>
-                <i>ICLR 2025</i><br>
-                <i>LangRob Workshop @ CoRL 2024</i> 
-                <span class="best_paper">Best Paper</span>
-                <br><a href="https://arxiv.org/abs/2410.11758">[paper]</a> <a href="https://github.com/LatentActionPretraining/LAPA">[code]</a> <a href="https://latentactionpretraining.github.io/"> [website]</a> 
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                The biggen bench: A principled benchmark for fine-grained evaluation of language models with language models<br>
-                Seungone Kim, Juyoung Suk, Ji Yong Cho, Shayne Longpre, Chaeeun Kim, Dongkeun Yoon, Guijin Son, Yejin Cho, Sheikh Shafayat, Jinheon Baek, Sue Hyun Park, Hyeonbin Hwang, Jinkyung Jo, Hyowon Cho, Haebin Shin, Seongyun Lee, Hanseok Oh, Noah Lee, Namgyu Ho, Se June Joo, Miyoung Ko, Yoonjoo Lee, Hyungjoo Chae, Jamin Shin, Joel Jang, <ins>Seonghyeon Ye</ins>, Bill Yuchen Lin, Sean Welleck, Graham Neubig, Moontae Lee, Kyungjae Lee, Minjoon Seo<br>
-                <i>NAACL 2025</i> <span class="best_paper">Best Paper</span>
-                <br><a href="https://aclanthology.org/2025.naacl-long.303/">[paper]</a> <a href="https://github.com/prometheus-eval/prometheus-eval">[code]</a>
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Bridging the Data Provenance Gap Across Text, Speech and Video<br>
-                Shayne Longpre, Nikhil Singh, Manuel Cherep, Kushagra Tiwary, Joanna Materzynska, William Brannon, Robert Mahari, Manan Dey, Mohammed Hamdy, Nayan Saxena, Ahmad Mustafa Anis, Emad A Alghamdi, Vu Minh Chien, Naana Obeng-Marnu, Da Yin, Kun Qian, Yizhi Li, Minnie Liang, An Dinh, Shrestha Mohanty, Deividas Mataciunas, Tobin South, Jianguo Zhang, Ariel N Lee, Campbell S Lund, Christopher Klamm, Damien Sileo, Diganta Misra, Enrico Shippole, Kevin Klyman, Lester JV Miranda, Niklas Muennighoff, <ins>Seonghyeon Ye</ins>, Seungone Kim, Vipul Gupta, Vivek Sharma, Xuhui Zhou, Caiming Xiong, Luis Villa, Stella Biderman, Alex Pentland, Sara Hooker, Jad Kabbara<br>
-                <i>ICLR 2025</i>
-                <br><a href="https://arxiv.org/abs/2412.17847">[paper]</a> 
-            </li>
-        </ul>
-        <hr>
-        <h3>2024</h3>
-        <ul class="news-list">
-            <li>
-                How Do Large Language Models Acquire Factual Knowledge During Pretraining?<br>
-                Hoyeon Chang, Jinho Park, <ins>Seonghyeon Ye</ins>, Sohee Yang, Youngkyung Seo, Du-Seong Chang, Minjoon Seo<br>
-                <i>NeurIPS 2024</i> 
-                <br><a href="https://arxiv.org/abs/2406.11813">[paper]</a> <a href="https://github.com/kaistAI/factual-knowledge-acquisition">[code]</a></p> 
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Consent in Crisis: The Rapid Decline of the AI Data Commons<br>
-                Shayne Longpre, Robert Mahari, Ariel Lee, Campbell Lund, Hamidah Oderinwale, William Brannon, Nayan Saxena, Naana Obeng-Marnu, Tobin South, Cole Hunter, Kevin Klyman, Christopher Klamm, Hailey Schoelkopf, Nikhil Singh, Manuel Cherep, Ahmad Anis, An Dinh, Caroline Chitongo, Da Yin, Damien Sileo, Deividas Mataciunas, Diganta Misra, Emad Alghamdi, Enrico Shippole, Jianguo Zhang, Joanna Materzynska, Kun Qian, Kush Tiwary, Lester Miranda, Manan Dey, Minnie Liang, Mohammed Hamdy, Niklas Muennighoff, <ins>Seonghyeon Ye</ins>, Seungone Kim, Shrestha Mohanty, Vipul Gupta, Vivek Sharma, Vu Minh Chien, Xuhui Zhou, Yizhi Li, Caiming Xiong, Luis Villa, Stella Biderman, Hanlin Li, Daphne Ippolito, Sara Hooker, Jad Kabbara, Sandy Pentland<br>
-                <i>NeurIPS 2024</i> 
-                <br><a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/c3738949a80306cc48a8ea8ba0560f9d-Abstract-Datasets_and_Benchmarks_Track.html">[paper]</a></p> 
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Instruction Matters, a Simple yet Effective Task Selection Approach in Instruction Tuning for Specific Tasks<br>
-                Changho Lee, Janghoon Han, <ins>Seonghyeon Ye</ins>, Stanley Jungkyu Choi, Honglak Lee, Kyunghoon Bae<br>
-                <i>EMNLP 2024</i> 
-                <br><a href="https://arxiv.org/abs/2406.11813">[paper]</a> <a href="https://github.com/CHLee0801/INSTA">[code]</a></p> 
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Self-Explore: Enhancing Mathematical Reasoning in Language Models with Fine-grained Rewards<br>
-                Hyeonbin Hwang, Doyoung Kim, Seungone Kim, <ins>Seonghyeon Ye</ins>, Minjoon Seo<br>
-                <i>EMNLP 2024 Findings</i> 
-                <br><a href="https://arxiv.org/abs/2404.10346">[paper]</a> <a href="https://github.com/hbin0701/Self-Explore">[code]</a></p> 
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                FLASK: Fine-grained Language Model Evaluation based on Alignment Skill Sets<br>
-                <ins>Seonghyeon Ye<sup>*</sup></b></ins>, Doyoung Kim<sup>*</sup>, Sungdong Kim, Hyeonbin Hwang, Seungone Kim, Yongrae Jo, James Thorne, Juho Kim, Minjoon Seo<br>
-                <i>ICLR 2024</i> 
-                <span class="spotlight">Spotlight</span>
-                <br><a href="https://arxiv.org/abs/2307.10928">[paper]</a> <a href="https://github.com/kaistAI/FLASK">[code]</a></p> 
-            </li>
-            <!-- Add more papers for 2024 -->
-        </ul>
-        <ul class="news-list">
-            <li>
-                Improving Probability-based Prompt Selection Through Unified Evaluation and Analysis<br>
-                Sohee Yang, Jonghyeon Kim, Joel Jang, <ins>Seonghyeon Ye</ins>, Hyunji Lee, Minjoon Seo<br>
-                <i>TACL 2024</i>
-                <br><a href="https://arxiv.org/abs/2305.14877">[paper]</a> <a href="https://github.com/soheeyang/unified-prompt-selection">[code]</a></p> 
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Investigating the Effectiveness of Task-Agnostic Prefix Prompt for Instruction Following<br>
-                <ins>Seonghyeon Ye</ins>, Hyeonbin Hwang, Sohee Yang, Hyeongu Yun, Yireun Kim, Minjoon Seo<br>
-                <i>AAAI 2024</i>
-                <br><a href="https://arxiv.org/abs/2302.14691">[paper]</a> <a href="https://github.com/seonghyeonye/icil">[code]</a></p> 
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Carpe Diem: On the Evaluation of World Knowledge in Lifelong Language Models<br>
-                Yujin Kim, Jaehong Yoon, <ins>Seonghyeon Ye</ins>, Sung Ju Hwang, Se-young Yun<br>
-                <i>NAACL 2024</i>
-                <br><a href="https://arxiv.org/abs/2311.08106">[paper]</a>
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Instructir: A benchmark for instruction following of information retrieval models<br>
-                Hanseok Oh, Hyunji Lee, Seonghyeon Ye, Haebin Shin, Hansol Jang, Changwook Jun, Minjoon Seo<br>
-                <i>KnowledgeNLP Workshop @ ACL24</i>
-                <br><a href="https://arxiv.org/abs/2402.14334">[paper]</a>
-            </li>
-        </ul>
-
-        <hr>
-        <h3>2023</h3>
-        
-        <ul class="news-list">
-            <li>
-                The CoT Collection: Improving Zero-shot and Few-shot Learning of Language Models via Chain-of-Thought Fine-tuning<br>
-                Seungone Kim, Se June Joo, Doyoung Kim, Joel Jang, <ins>Seonghyeon Ye</ins>, Jamin Shin, Minjoon Seo<br>
-                <i>EMNLP 2023</i>
-                <br><a href="https://arxiv.org/abs/2305.14045">[paper]</a> <a href="https://github.com/kaist-lklab/CoT-Collection">[code]</a></p> 
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Efficiently Enhancing Zero-Shot Performance of Instruction Following Model via Retrieval of Soft Prompt<br>
-                <ins>Seonghyeon Ye</ins>, Joel Jang, Doyoung Kim, Yongrae Jo, Minjoon Seo<br>
-                <i>EMNLP 2023 Findings</i>
-                <br><a href="https://arxiv.org/abs/2210.03029">[paper]</a> <a href="https://github.com/seonghyeonye/RoSPr">[code]</a></p> 
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Exploring the Benefits of Training Expert Language Models over Instruction Tuning<br>
-                Joel Jang, Seungone Kim, <ins>Seonghyeon Ye</ins>, Doyoung Kim, Lajanugen Logeswaran, Moontae Lee, Kyungjae Lee, Minjoon Seo<br>
-                <i>ICML 2023</i>
-                <br><a href="https://arxiv.org/abs/2302.03202">[paper]</a> <a href="https://github.com/joeljang/ELM">[code]</a></p> 
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Guess the Instruction! Flipped Learning Makes Language Models Stronger Zero-Shot Learners<br>
-                <ins>Seonghyeon Ye</ins>, Doyoung Kim, Joel Jang, Joongbo Shin, Minjoon Seo<br>
-                <i>ICLR 2023</i>
-                <br><a href="https://arxiv.org/abs/2210.02969">[paper]</a> <a href="https://github.com/seonghyeonye/Flipped-Learning">[code]</a></p> 
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                SelFee: Iterative Self-Revising LLM Empowered by Self-Feedback Generation<br>
-                <ins>Seonghyeon Ye<sup>*</sup></b></ins>, Yongrae Jo<sup>*</sup>, Doyoung Kim<sup>*</sup>, Sungdong Kim, Hyeonbin Hwang, Minjoon Seo<br>
-                <i>Blog post</i>
-                <br><a href="https://kaistai.github.io/SelFee/">[blog]</a> <a href="https://github.com/kaistAI/SelFee">[code]</a></p> 
-            </li>
-        </ul>
-        <hr>
-        <h3>2022</h3>
-        <ul class="news-list">
-            <li>
-                Can Large Language Models Truly Understand Prompts? A Case Study with Negated Prompts<br>
-                Joel Jang<sup>*</sup>, <ins>Seonghyeon Ye</ins><sup>*</sup>, Minjoon Seo<br>
-                <i>Transfer Learning for NLP Workshop @ NeurIPS 2022</i>
-                <br><a href="https://arxiv.org/abs/2209.12711">[paper]</a> <a href="https://github.com/joeljang/negated-prompts-for-llms">[code]</a></p>
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                TemporalWiki: A Lifelong Benchmark for Training and Evaluating Ever-Evolving Language Models<br>
-                Joel Jang<sup>*</sup>, <ins>Seonghyeon Ye</ins><sup>*</sup>, Chango Lee, Sohee Yang, Joongbo Shin, Janghoon Han, Gyeonghun Kim, Minjoon Seo<br>
-                <i>EMNLP 2022</i>
-                <br><a href="https://arxiv.org/abs/2204.14211">[paper]</a> <a href="https://github.com/joeljang/temporalwiki">[code]</a></p>
-            </li>
-        </ul>
-        <ul class="news-list">
-            <li>
-                Towards Continual Knowledge Learning of Language Models<br>
-                Joel Jang, <ins>Seonghyeon Ye</ins>, Sohee Yang, Joongbo Shin, Janghoon Han, Gyeonghun Kim, Stanley Jungkyu Choi, Minjoon Seo<br>
-                <i>ICLR 2022</i>
-                <br><a href="https://arxiv.org/abs/2110.03215">[paper]</a> <a href="https://github.com/joeljang/continual-knowledge-learning">[code]</a></p>  
-            </li>
-        </ul>
-        <hr>
-        <h3>2021</h3>
-        <ul class="news-list">
-            <li>
-                Efficient Contrastive Learning via Novel Data Augmentation and Curriculum Learning<br>
-                <ins>Seonghyeon Ye</ins>, Jiseon Kim, Alice Oh<br>
-                <i>EMNLP 2021 (short)</i>
-                <br><a href="https://arxiv.org/abs/2109.05941">[paper]</a> <a href="https://github.com/seonghyeonye/EfficientCL">[code]</a></p>
-            </li>  
-        </ul>
-        <ul class="news-list">
-            <li>
-                Dimensional Emotion Detection from Categorical Emotion<br>
-                Sungjoon Park, Jiseon Kim, <ins>Seonghyeon Ye</ins>, Jaeyeol Jeon, Hee Young Park, Alice Oh<br>
-                <i>EMNLP 2021</i>
-                <br><a href="https://arxiv.org/abs/1911.02499">[paper]</a> <a href="https://github.com/SungjoonPark/EmotionDetection">[code]</a></p>
-            </li>
-        </ul>
+      <p class="hero-bio">
+        I am a final year Ph.D. student at KAIST Graduate School of AI, advised by
+        <a href="https://seominjoon.github.io/">Minjoon Seo</a> and
+        <a href="https://sites.google.com/view/kiminlee">Kimin Lee</a>.
+        My research focuses on <strong>world action models for generalist robot policy</strong>.
+      </p>
     </div>
-    <!-- Education Section -->
-    <div class="education-section">
-        <h2>Education</h2>
-        <hr>
-
-        <ul class="education-list">
-            <li>
-                <strong>KAIST AI</strong><br>
-                M.S. & Ph.D. in Artificial Intelligence, <i>2022 - Present</i><br>
-                Advisor: Minjoon Seo, Kimin Lee
-            </li>
-            <li>
-                <strong>KAIST CS</strong><br>
-                B.S. in Computer Science, <i>2017 - 2021</i><br>
-                Advisor: Alice Oh, Jong C. Park
-            </li>
-        </ul>
-    </div>
-    <div class="work-experience-section">
-        <h2>Work Experience</h2>
-        <hr>
-    
-        <ul class="work-list">
-            <li>
-                <strong>NVIDIA GEAR</strong><br>
-                Research Intern, <i>Dec 2024 - Present</i><br>
-                Working with <a href="https://jimfan.me/">Jim Fan</a>, <a href="https://yukezhu.me/">Yuke Zhu</a>
-            </li>
-            <li>
-                <strong>Microsoft Research</strong><br>
-                Research Intern, <i>June 2024 - September 2024</i><br>
-                Working with <a href="https://www.microsoft.com/en-us/research/people/jfgao/">Jianfeng Gao</a>, <a href="https://jwyang.github.io/">Jianwei Yang</a>, and <a href="https://scholar.google.com/citations?user=u1CNjgwAAAAJ">Baolin Peng</a>
-            </li>
-            <li>
-                <strong>LG AI Research</strong><br>
-                Research Intern, <i>July 2022 - Mar 2023</i><br>
-                Working with <a href="https://scholar.google.co.kr/citations?user=xzJSvJcAAAAJ&hl=en">Joongbo Shin</a>
-            </li>
-            <!-- Add more work experiences if needed -->
-        </ul>
+    <div class="profile-image">
+      <img src="SeonghyeonYe.JPG" alt="Seonghyeon Ye">
     </div>
   </div>
 
+  <!-- ── PUBLICATIONS ── -->
+  <div class="section">
+    <h2 class="section-title"><i class="fa fa-book-open"></i> Publications</h2>
+
+    <!-- 2026 -->
+    <div class="year-group">
+      <div class="year-label">2026</div>
+
+      <div class="pub-card">
+        <div class="pub-title">DreamZero: World Action Models are Zero-shot Policies</div>
+        <div class="pub-authors">
+          <ins>Seonghyeon Ye†</ins>, Yunhao Ge*, Kaiyuan Zheng*, Shenyuan Gao*, Sihyun Yu*, George Kurian*, Suneel Indupuru*, You Liang Tan*, Chuning Zhu, Jiannan Xiang, Ayaan Malik, Kyungmin Lee, William Liang, Nadun Ranawaka, Jiasheng Gu, Yinzhen Xu, Guanzhi Wang, Fengyuan Hu, Avnish Narayan, Johan Bjorck, Jing Wang, Gwanghyun Kim, Dantong Niu, Ruijie Zheng, Yuqi Xie, Jimmy Wu, Qi Wang, Ryan Julian, Danfei Xu, Yilun Du, Yevgen Chebotar, Scott Reed, Jan Kautz, Yuke Zhu†, Linxi "Jim" Fan†, Joel Jang†
+        </div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2602.15922"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/dreamzero0/dreamzero"><i class="fab fa-github"></i> code</a>
+          <a class="pub-link" href="https://dreamzero0.github.io/"><i class="fa fa-globe"></i> website</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos</div>
+        <div class="pub-authors">
+          Shenyuan Gao†, William Liang†, Kaiyuan Zheng*, Ayaan Malik*, <ins>Seonghyeon Ye</ins>, Sihyun Yu, Wei-Cheng Tseng, Yuzhu Dong, Kaichun Mo, Chen-Hsuan Lin, Qianli Ma, Seungjun Nah, Loic Magne, Jiannan Xiang, Yuqi Xie, Ruijie Zheng, Dantong Niu, You Liang Tan, K.R. Zentner, George Kurian, Suneel Indupuru, Pooya Jannaty, Jinwei Gu, Jun Zhang, Jitendra Malik, Pieter Abbeel, Ming-Yu Liu, Yuke Zhu†, Joel Jang†, Linxi "Jim" Fan†
+        </div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2602.06949"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/NVIDIA/DreamDojo"><i class="fab fa-github"></i> code</a>
+          <a class="pub-link" href="https://dreamdojo-world.github.io/"><i class="fa fa-globe"></i> website</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="year-group">
+      <div class="year-label">2025</div>
+
+      <div class="pub-card">
+        <div class="pub-title">DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories</div>
+        <div class="pub-authors">
+          Joel Jang*, <ins>Seonghyeon Ye*</ins>, Zongyu Lin*, Jiannan Xiang*, Johan Bjorck, Yu Fang, Fengyuan Hu, Spencer Huang, Kaushil Kundalia, Yen-Chen Lin, Loic Magne, Ajay Mandlekar, Avnish Narayan, You Liang Tan, Guanzhi Wang, Jing Wang, Qi Wang, Yinzhen Xu, Xiaohui Zeng, Kaiyuan Zheng, Ruijie Zheng, Ming-Yu Liu, Luke Zettlemoyer, Dieter Fox, Jan Kautz, Scott Reed*, Yuke Zhu*, Linxi "Jim" Fan*
+        </div>
+        <div class="pub-venue"><span class="pub-venue-name">CoRL 2025</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2505.12705"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://research.nvidia.com/labs/gear/dreamgen/"><i class="fa fa-globe"></i> website</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Cosmos-Predict2.5: World Simulation with Video Foundation Models for Physical AI</div>
+        <div class="pub-authors">NVIDIA</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2511.00062"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/nvidia-cosmos/cosmos-predict2.5"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">FLARE: Robot Learning with Implicit World Modeling</div>
+        <div class="pub-authors">
+          Ruijie Zheng*, Jing Wang*, Scott Reed*, Johan Bjorck, Yu Fang, Fengyuan Hu, Joel Jang, Kaushil Kundalia, Zongyu Lin, Loic Magne, Avnish Narayan, You Liang Tan, Guanzhi Wang, Qi Wang, Jiannan Xiang, Yinzhen Xu, <ins>Seonghyeon Ye</ins>, Jan Kautz, Furong Huang, Yuke Zhu, Linxi Fan
+        </div>
+        <div class="pub-venue"><span class="pub-venue-name">CoRL 2025</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2505.15659"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://research.nvidia.com/labs/gear/flare"><i class="fa fa-globe"></i> website</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">GR00T N1: An Open Foundation Model for Generalist Humanoid Robots</div>
+        <div class="pub-authors">NVIDIA GEAR</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2503.14734"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/NVIDIA/Isaac-GR00T"><i class="fab fa-github"></i> code</a>
+          <a class="pub-link" href="https://developer.nvidia.com/isaac/gr00t"><i class="fa fa-globe"></i> website</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Magma: A Foundation Model for Multimodal AI Agents</div>
+        <div class="pub-authors">
+          Jianwei Yang, Reuben Tan, Qianhui Wu, Ruijie Zheng, Baolin Peng, Yongyuan Liang, Yu Gu, Mu Cai, <ins>Seonghyeon Ye</ins>, Joel Jang, Yuquan Deng, Lars Liden, Jianfeng Gao
+        </div>
+        <div class="pub-venue"><span class="pub-venue-name">CVPR 2025</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2502.13130"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/microsoft/Magma"><i class="fab fa-github"></i> code</a>
+          <a class="pub-link" href="https://microsoft.github.io/Magma"><i class="fa fa-globe"></i> website</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Latent Action Pretraining from Videos</div>
+        <div class="pub-authors">
+          <ins>Seonghyeon Ye*</ins>, Joel Jang*, Byeongguk Jeon, Sejune Joo, Jianwei Yang, Baolin Peng, Ajay Mandlekar, Reuben Tan, Yu-Wei Chao, Bill Yuchen Lin, Lars Liden, Kimin Lee*, Jianfeng Gao*, Luke Zettlemoyer*, Dieter Fox*, Minjoon Seo*
+        </div>
+        <div class="pub-venue">
+          <span class="pub-venue-name">ICLR 2025</span>
+          &nbsp;·&nbsp;
+          <span class="pub-venue-name">LangRob Workshop @ CoRL 2024</span>
+          <span class="badge badge-best"><i class="fa fa-trophy"></i> Best Paper</span>
+        </div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2410.11758"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/LatentActionPretraining/LAPA"><i class="fab fa-github"></i> code</a>
+          <a class="pub-link" href="https://latentactionpretraining.github.io/"><i class="fa fa-globe"></i> website</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">The BigGen Bench: A Principled Benchmark for Fine-grained Evaluation of Language Models with Language Models</div>
+        <div class="pub-authors">
+          Seungone Kim, Juyoung Suk, Ji Yong Cho, Shayne Longpre, Chaeeun Kim, Dongkeun Yoon, Guijin Son, Yejin Cho, Sheikh Shafayat, Jinheon Baek, Sue Hyun Park, Hyeonbin Hwang, Jinkyung Jo, Hyowon Cho, Haebin Shin, Seongyun Lee, Hanseok Oh, Noah Lee, Namgyu Ho, Se June Joo, Miyoung Ko, Yoonjoo Lee, Hyungjoo Chae, Jamin Shin, Joel Jang, <ins>Seonghyeon Ye</ins>, Bill Yuchen Lin, Sean Welleck, Graham Neubig, Moontae Lee, Kyungjae Lee, Minjoon Seo
+        </div>
+        <div class="pub-venue">
+          <span class="pub-venue-name">NAACL 2025</span>
+          <span class="badge badge-best"><i class="fa fa-trophy"></i> Best Paper</span>
+        </div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://aclanthology.org/2025.naacl-long.303/"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/prometheus-eval/prometheus-eval"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Bridging the Data Provenance Gap Across Text, Speech and Video</div>
+        <div class="pub-authors">
+          Shayne Longpre, Nikhil Singh, Manuel Cherep, Kushagra Tiwary, Joanna Materzynska, William Brannon, Robert Mahari, Manan Dey, Mohammed Hamdy, Nayan Saxena, Ahmad Mustafa Anis, Emad A Alghamdi, Vu Minh Chien, Naana Obeng-Marnu, Da Yin, Kun Qian, Yizhi Li, Minnie Liang, An Dinh, Shrestha Mohanty, Deividas Mataciunas, Tobin South, Jianguo Zhang, Ariel N Lee, Campbell S Lund, Christopher Klamm, Damien Sileo, Diganta Misra, Enrico Shippole, Kevin Klyman, Lester JV Miranda, Niklas Muennighoff, <ins>Seonghyeon Ye</ins>, Seungone Kim, Vipul Gupta, Vivek Sharma, Xuhui Zhou, Caiming Xiong, Luis Villa, Stella Biderman, Alex Pentland, Sara Hooker, Jad Kabbara
+        </div>
+        <div class="pub-venue"><span class="pub-venue-name">ICLR 2025</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2412.17847"><i class="fa fa-file-pdf"></i> paper</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="year-group">
+      <div class="year-label">2024</div>
+
+      <div class="pub-card">
+        <div class="pub-title">How Do Large Language Models Acquire Factual Knowledge During Pretraining?</div>
+        <div class="pub-authors">Hoyeon Chang, Jinho Park, <ins>Seonghyeon Ye</ins>, Sohee Yang, Youngkyung Seo, Du-Seong Chang, Minjoon Seo</div>
+        <div class="pub-venue"><span class="pub-venue-name">NeurIPS 2024</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2406.11813"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/kaistAI/factual-knowledge-acquisition"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Consent in Crisis: The Rapid Decline of the AI Data Commons</div>
+        <div class="pub-authors">
+          Shayne Longpre, Robert Mahari, Ariel Lee, Campbell Lund, Hamidah Oderinwale, William Brannon, Nayan Saxena, Naana Obeng-Marnu, Tobin South, Cole Hunter, Kevin Klyman, Christopher Klamm, Hailey Schoelkopf, Nikhil Singh, Manuel Cherep, Ahmad Anis, An Dinh, Caroline Chitongo, Da Yin, Damien Sileo, Deividas Mataciunas, Diganta Misra, Emad Alghamdi, Enrico Shippole, Jianguo Zhang, Joanna Materzynska, Kun Qian, Kush Tiwary, Lester Miranda, Manan Dey, Minnie Liang, Mohammed Hamdy, Niklas Muennighoff, <ins>Seonghyeon Ye</ins>, Seungone Kim, Shrestha Mohanty, Vipul Gupta, Vivek Sharma, Vu Minh Chien, Xuhui Zhou, Yizhi Li, Caiming Xiong, Luis Villa, Stella Biderman, Hanlin Li, Daphne Ippolito, Sara Hooker, Jad Kabbara, Sandy Pentland
+        </div>
+        <div class="pub-venue"><span class="pub-venue-name">NeurIPS 2024</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/c3738949a80306cc48a8ea8ba0560f9d-Abstract-Datasets_and_Benchmarks_Track.html"><i class="fa fa-file-pdf"></i> paper</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Instruction Matters, a Simple yet Effective Task Selection Approach in Instruction Tuning for Specific Tasks</div>
+        <div class="pub-authors">Changho Lee, Janghoon Han, <ins>Seonghyeon Ye</ins>, Stanley Jungkyu Choi, Honglak Lee, Kyunghoon Bae</div>
+        <div class="pub-venue"><span class="pub-venue-name">EMNLP 2024</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2406.11813"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/CHLee0801/INSTA"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Self-Explore: Enhancing Mathematical Reasoning in Language Models with Fine-grained Rewards</div>
+        <div class="pub-authors">Hyeonbin Hwang, Doyoung Kim, Seungone Kim, <ins>Seonghyeon Ye</ins>, Minjoon Seo</div>
+        <div class="pub-venue"><span class="pub-venue-name">EMNLP 2024 Findings</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2404.10346"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/hbin0701/Self-Explore"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">FLASK: Fine-grained Language Model Evaluation based on Alignment Skill Sets</div>
+        <div class="pub-authors">
+          <ins>Seonghyeon Ye*</ins>, Doyoung Kim*, Sungdong Kim, Hyeonbin Hwang, Seungone Kim, Yongrae Jo, James Thorne, Juho Kim, Minjoon Seo
+        </div>
+        <div class="pub-venue">
+          <span class="pub-venue-name">ICLR 2024</span>
+          <span class="badge badge-spotlight"><i class="fa fa-star"></i> Spotlight</span>
+        </div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2307.10928"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/kaistAI/FLASK"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Improving Probability-based Prompt Selection Through Unified Evaluation and Analysis</div>
+        <div class="pub-authors">Sohee Yang, Jonghyeon Kim, Joel Jang, <ins>Seonghyeon Ye</ins>, Hyunji Lee, Minjoon Seo</div>
+        <div class="pub-venue"><span class="pub-venue-name">TACL 2024</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2305.14877"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/soheeyang/unified-prompt-selection"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Investigating the Effectiveness of Task-Agnostic Prefix Prompt for Instruction Following</div>
+        <div class="pub-authors"><ins>Seonghyeon Ye</ins>, Hyeonbin Hwang, Sohee Yang, Hyeongu Yun, Yireun Kim, Minjoon Seo</div>
+        <div class="pub-venue"><span class="pub-venue-name">AAAI 2024</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2302.14691"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/seonghyeonye/icil"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Carpe Diem: On the Evaluation of World Knowledge in Lifelong Language Models</div>
+        <div class="pub-authors">Yujin Kim, Jaehong Yoon, <ins>Seonghyeon Ye</ins>, Sung Ju Hwang, Se-young Yun</div>
+        <div class="pub-venue"><span class="pub-venue-name">NAACL 2024</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2311.08106"><i class="fa fa-file-pdf"></i> paper</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">InstructIR: A Benchmark for Instruction Following of Information Retrieval Models</div>
+        <div class="pub-authors">Hanseok Oh, Hyunji Lee, <ins>Seonghyeon Ye</ins>, Haebin Shin, Hansol Jang, Changwook Jun, Minjoon Seo</div>
+        <div class="pub-venue"><span class="pub-venue-name">KnowledgeNLP Workshop @ ACL 2024</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2402.14334"><i class="fa fa-file-pdf"></i> paper</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2023 -->
+    <div class="year-group">
+      <div class="year-label">2023</div>
+
+      <div class="pub-card">
+        <div class="pub-title">The CoT Collection: Improving Zero-shot and Few-shot Learning of Language Models via Chain-of-Thought Fine-tuning</div>
+        <div class="pub-authors">Seungone Kim, Se June Joo, Doyoung Kim, Joel Jang, <ins>Seonghyeon Ye</ins>, Jamin Shin, Minjoon Seo</div>
+        <div class="pub-venue"><span class="pub-venue-name">EMNLP 2023</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2305.14045"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/kaist-lklab/CoT-Collection"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Efficiently Enhancing Zero-Shot Performance of Instruction Following Model via Retrieval of Soft Prompt</div>
+        <div class="pub-authors"><ins>Seonghyeon Ye</ins>, Joel Jang, Doyoung Kim, Yongrae Jo, Minjoon Seo</div>
+        <div class="pub-venue"><span class="pub-venue-name">EMNLP 2023 Findings</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2210.03029"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/seonghyeonye/RoSPr"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Exploring the Benefits of Training Expert Language Models over Instruction Tuning</div>
+        <div class="pub-authors">Joel Jang, Seungone Kim, <ins>Seonghyeon Ye</ins>, Doyoung Kim, Lajanugen Logeswaran, Moontae Lee, Kyungjae Lee, Minjoon Seo</div>
+        <div class="pub-venue"><span class="pub-venue-name">ICML 2023</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2302.03202"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/joeljang/ELM"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Guess the Instruction! Flipped Learning Makes Language Models Stronger Zero-Shot Learners</div>
+        <div class="pub-authors"><ins>Seonghyeon Ye</ins>, Doyoung Kim, Joel Jang, Joongbo Shin, Minjoon Seo</div>
+        <div class="pub-venue"><span class="pub-venue-name">ICLR 2023</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2210.02969"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/seonghyeonye/Flipped-Learning"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">SelFee: Iterative Self-Revising LLM Empowered by Self-Feedback Generation</div>
+        <div class="pub-authors"><ins>Seonghyeon Ye*</ins>, Yongrae Jo*, Doyoung Kim*, Sungdong Kim, Hyeonbin Hwang, Minjoon Seo</div>
+        <div class="pub-venue"><span class="pub-venue-name">Blog post</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://kaistai.github.io/SelFee/"><i class="fa fa-blog"></i> blog</a>
+          <a class="pub-link" href="https://github.com/kaistAI/SelFee"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2022 -->
+    <div class="year-group">
+      <div class="year-label">2022</div>
+
+      <div class="pub-card">
+        <div class="pub-title">Can Large Language Models Truly Understand Prompts? A Case Study with Negated Prompts</div>
+        <div class="pub-authors">Joel Jang*, <ins>Seonghyeon Ye*</ins>, Minjoon Seo</div>
+        <div class="pub-venue"><span class="pub-venue-name">Transfer Learning for NLP Workshop @ NeurIPS 2022</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2209.12711"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/joeljang/negated-prompts-for-llms"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">TemporalWiki: A Lifelong Benchmark for Training and Evaluating Ever-Evolving Language Models</div>
+        <div class="pub-authors">Joel Jang*, <ins>Seonghyeon Ye*</ins>, Chango Lee, Sohee Yang, Joongbo Shin, Janghoon Han, Gyeonghun Kim, Minjoon Seo</div>
+        <div class="pub-venue"><span class="pub-venue-name">EMNLP 2022</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2204.14211"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/joeljang/temporalwiki"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Towards Continual Knowledge Learning of Language Models</div>
+        <div class="pub-authors">Joel Jang, <ins>Seonghyeon Ye</ins>, Sohee Yang, Joongbo Shin, Janghoon Han, Gyeonghun Kim, Stanley Jungkyu Choi, Minjoon Seo</div>
+        <div class="pub-venue"><span class="pub-venue-name">ICLR 2022</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2110.03215"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/joeljang/continual-knowledge-learning"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2021 -->
+    <div class="year-group">
+      <div class="year-label">2021</div>
+
+      <div class="pub-card">
+        <div class="pub-title">Efficient Contrastive Learning via Novel Data Augmentation and Curriculum Learning</div>
+        <div class="pub-authors"><ins>Seonghyeon Ye</ins>, Jiseon Kim, Alice Oh</div>
+        <div class="pub-venue"><span class="pub-venue-name">EMNLP 2021 (short)</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2109.05941"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/seonghyeonye/EfficientCL"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-title">Dimensional Emotion Detection from Categorical Emotion</div>
+        <div class="pub-authors">Sungjoon Park, Jiseon Kim, <ins>Seonghyeon Ye</ins>, Jaeyeol Jeon, Hee Young Park, Alice Oh</div>
+        <div class="pub-venue"><span class="pub-venue-name">EMNLP 2021</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/1911.02499"><i class="fa fa-file-pdf"></i> paper</a>
+          <a class="pub-link" href="https://github.com/SungjoonPark/EmotionDetection"><i class="fab fa-github"></i> code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EDUCATION ── -->
+  <div class="section">
+    <h2 class="section-title"><i class="fa fa-graduation-cap"></i> Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fa fa-university"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-org">KAIST AI</div>
+          <div class="timeline-detail">M.S. &amp; Ph.D. in Artificial Intelligence &nbsp;·&nbsp; 2022 – Present<br>Advisor: Minjoon Seo, Kimin Lee</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fa fa-university"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-org">KAIST CS</div>
+          <div class="timeline-detail">B.S. in Computer Science &nbsp;·&nbsp; 2017 – 2021<br>Advisor: Alice Oh, Jong C. Park</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WORK EXPERIENCE ── -->
+  <div class="section">
+    <h2 class="section-title"><i class="fa fa-briefcase"></i> Work Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fa fa-microchip"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-org">NVIDIA GEAR</div>
+          <div class="timeline-detail">Research Intern &nbsp;·&nbsp; Working with <a href="https://jimfan.me/">Jim Fan</a>, <a href="https://yukezhu.me/">Yuke Zhu</a></div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fab fa-microsoft"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-org">Microsoft Research</div>
+          <div class="timeline-detail">Research Intern &nbsp;·&nbsp; Working with <a href="https://www.microsoft.com/en-us/research/people/jfgao/">Jianfeng Gao</a>, <a href="https://jwyang.github.io/">Jianwei Yang</a>, <a href="https://scholar.google.com/citations?user=u1CNjgwAAAAJ">Baolin Peng</a></div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fa fa-flask"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-org">LG AI Research</div>
+          <div class="timeline-detail">Research Intern &nbsp;·&nbsp; Working with <a href="https://scholar.google.co.kr/citations?user=xzJSvJcAAAAJ&hl=en">Joongbo Shin</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 </body>
 </html>
